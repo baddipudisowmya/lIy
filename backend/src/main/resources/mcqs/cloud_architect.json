@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "question": "What is the shared responsibility model in cloud computing?",
+    "options": [
+      "All responsibility belongs to the cloud provider",
+      "The provider secures infrastructure; the customer secures their data, applications, and access",
+      "All responsibility belongs to the customer",
+      "Responsibility is shared equally 50/50"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The shared model: provider manages infrastructure security; customer manages data and application security.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What is the difference between horizontal and vertical scaling?",
+    "options": [
+      "They are the same approach",
+      "Vertical adds more power to existing machines; horizontal adds more machines",
+      "Horizontal is always better than vertical",
+      "Vertical is adding storage; horizontal is adding CPU"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Vertical scaling = bigger machine (scale up). Horizontal scaling = more machines (scale out).",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "question": "What is a VPC (Virtual Private Cloud)?",
+    "options": [
+      "A type of VPN",
+      "A logically isolated virtual network within a cloud provider where you launch resources",
+      "A virtualized physical server",
+      "A cloud pricing model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A VPC provides a logically isolated section of the cloud where you define networking, subnets, and security.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "question": "What is serverless computing?",
+    "options": [
+      "Computing without any servers",
+      "A model where the cloud provider manages server infrastructure and you only deploy code/functions",
+      "Using personal computers instead of servers",
+      "A type of peer-to-peer network"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Serverless abstracts server management — you deploy code and the provider handles scaling and infrastructure.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "question": "What is the purpose of a CDN (Content Delivery Network)?",
+    "options": [
+      "To create content dynamically",
+      "To distribute content across globally distributed edge servers for faster delivery to users",
+      "To encrypt content during transfer",
+      "To compress files on servers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A CDN caches content at edge locations worldwide, reducing latency for end users.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 6,
+    "question": "What is a multi-region deployment and when would you use it?",
+    "options": [
+      "Deploying to multiple folders",
+      "Running applications across multiple geographic regions for disaster recovery and low latency",
+      "Having multiple teams deploy code",
+      "Deploying to multiple cloud providers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multi-region deploys apps across geographies for disaster recovery, compliance, and reduced latency.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "question": "What is the Well-Architected Framework?",
+    "options": [
+      "A programming framework",
+      "A set of best practices across pillars like security, reliability, performance, cost, and operations",
+      "A building architecture standard",
+      "A cloud migration tool"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Well-Architected Framework provides best practices across five pillars for cloud architecture.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "question": "What is auto-scaling?",
+    "options": [
+      "Automatically scaling images on a webpage",
+      "Automatically adjusting the number of compute resources based on demand",
+      "Automatically scaling database size",
+      "Scaling the team size automatically"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Auto-scaling dynamically adjusts compute capacity based on traffic/load to match demand.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 9,
+    "question": "What is the difference between IaaS, PaaS, and SaaS?",
+    "options": [
+      "They are three cloud providers",
+      "IaaS provides infrastructure; PaaS provides platform/runtime; SaaS provides ready-to-use software",
+      "They differ only in pricing",
+      "IaaS is for small companies, SaaS for large"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IaaS = raw infrastructure, PaaS = managed platform, SaaS = complete application. Each abstracts more.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 10,
+    "question": "What is cloud cost optimization?",
+    "options": [
+      "Using the cheapest cloud provider",
+      "Strategies to minimize cloud spending while meeting performance needs (right-sizing, reserved instances, spot)",
+      "Moving everything to on-premise",
+      "Reducing the number of team members"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cost optimization balances performance needs with spending through right-sizing, reservations, and spot instances.",
+    "difficulty": "medium"
+  }
+]

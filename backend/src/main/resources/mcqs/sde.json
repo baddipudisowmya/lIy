@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "question": "What is the time complexity of searching in a balanced Binary Search Tree?",
+    "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+    "correctAnswer": 1,
+    "explanation": "A balanced BST has height log(n), so searching takes O(log n) time.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "Which design pattern ensures a class has only one instance?",
+    "options": ["Factory", "Observer", "Singleton", "Strategy"],
+    "correctAnswer": 2,
+    "explanation": "The Singleton pattern restricts instantiation to a single instance.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "question": "What does SOLID's 'L' stand for?",
+    "options": ["Loose Coupling", "Liskov Substitution", "Layered Architecture", "Lazy Loading"],
+    "correctAnswer": 1,
+    "explanation": "L stands for Liskov Substitution Principle — subtypes must be substitutable for their base types.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "question": "Which data structure uses FIFO ordering?",
+    "options": ["Stack", "Queue", "Heap", "Tree"],
+    "correctAnswer": 1,
+    "explanation": "Queue follows First-In-First-Out (FIFO) ordering.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "question": "In a distributed system, what does CAP theorem state?",
+    "options": [
+      "You can have Consistency, Availability, and Partition tolerance simultaneously",
+      "You can have at most two of Consistency, Availability, and Partition tolerance",
+      "Consistency is always more important than Availability",
+      "Partition tolerance is optional in distributed systems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CAP theorem states you can guarantee at most two of the three properties simultaneously.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 6,
+    "question": "What is the purpose of an index in a database?",
+    "options": [
+      "To encrypt data",
+      "To speed up data retrieval operations",
+      "To normalize the database",
+      "To create backups"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Database indexes speed up data retrieval by providing quick lookup paths.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 7,
+    "question": "Which sorting algorithm has the best average-case time complexity?",
+    "options": ["Bubble Sort - O(n²)", "Merge Sort - O(n log n)", "Selection Sort - O(n²)", "Insertion Sort - O(n²)"],
+    "correctAnswer": 1,
+    "explanation": "Merge Sort consistently runs in O(n log n) average and worst case.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "question": "What is a race condition?",
+    "options": [
+      "When two threads compete for CPU time",
+      "When the output depends on the sequence of uncontrollable events",
+      "When a program runs faster than expected",
+      "When two programs try to access the internet simultaneously"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A race condition occurs when the system's behavior depends on the timing of uncontrollable events like thread scheduling.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "question": "What HTTP method is idempotent and used to update a resource completely?",
+    "options": ["POST", "PATCH", "PUT", "DELETE"],
+    "correctAnswer": 2,
+    "explanation": "PUT is idempotent and replaces the entire resource. POST creates new resources and is not idempotent.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "question": "What is the space complexity of a recursive Fibonacci implementation without memoization?",
+    "options": ["O(1)", "O(n)", "O(2^n)", "O(n²)"],
+    "correctAnswer": 1,
+    "explanation": "The call stack depth is O(n) since each recursive call goes at most n levels deep.",
+    "difficulty": "hard"
+  }
+]

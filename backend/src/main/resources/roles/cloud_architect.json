@@ -1,0 +1,39 @@
+{
+  "title": "Cloud Architect",
+  "key": "cloud_architect",
+  "requiredSkills": [
+    "Cloud Platforms (AWS/GCP/Azure)",
+    "Infrastructure as Code (Terraform/CloudFormation)",
+    "Networking (VPC, DNS, Load Balancers)",
+    "Security & Compliance",
+    "Cost Optimization",
+    "High Availability & Disaster Recovery",
+    "Microservices & Serverless Architecture",
+    "Monitoring & Logging"
+  ],
+  "preferredSkills": [
+    "Multi-Cloud Strategy",
+    "Kubernetes & Container Orchestration",
+    "Data Architecture",
+    "Migration Strategy",
+    "Performance Engineering",
+    "Compliance Frameworks (SOC2/HIPAA)",
+    "FinOps",
+    "Edge Computing"
+  ],
+  "languages": ["Python", "Go", "Bash", "HCL", "YAML"],
+  "minExperienceYears": 3,
+  "typicalExperience": "3-8 years for mid to senior level",
+  "mustHave": [
+    "Deep expertise in at least one cloud platform",
+    "Infrastructure design experience",
+    "Security architecture knowledge",
+    "Cost management skills"
+  ],
+  "niceToHave": [
+    "AWS Solutions Architect / GCP Cloud Architect cert",
+    "Multi-cloud implementation experience",
+    "Enterprise-scale architecture experience",
+    "Published architecture case studies"
+  ]
+}

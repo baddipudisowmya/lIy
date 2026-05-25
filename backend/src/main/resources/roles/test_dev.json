@@ -1,0 +1,39 @@
+{
+  "title": "Test/QA Engineer",
+  "key": "test_dev",
+  "requiredSkills": [
+    "Manual Testing",
+    "Automated Testing",
+    "Test Case Design",
+    "Bug Tracking & Reporting",
+    "Regression Testing",
+    "API Testing (Postman/REST Assured)",
+    "Test Planning & Strategy",
+    "Version Control (Git)"
+  ],
+  "preferredSkills": [
+    "Selenium/Cypress/Playwright",
+    "Performance Testing (JMeter/k6)",
+    "CI/CD Integration",
+    "Mobile Testing",
+    "Security Testing Basics",
+    "BDD (Cucumber/Gherkin)",
+    "Load Testing",
+    "Test Management Tools (JIRA/TestRail)"
+  ],
+  "languages": ["Java", "Python", "JavaScript", "SQL"],
+  "minExperienceYears": 0,
+  "typicalExperience": "0-3 years for entry to mid-level",
+  "mustHave": [
+    "Understanding of testing fundamentals",
+    "Test case writing ability",
+    "Bug reporting skills",
+    "Basic programming knowledge"
+  ],
+  "niceToHave": [
+    "ISTQB certification",
+    "Automation framework experience",
+    "Performance testing experience",
+    "CI/CD pipeline knowledge"
+  ]
+}

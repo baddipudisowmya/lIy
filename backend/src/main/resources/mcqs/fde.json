@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "What CSS property is used to create a flex container?",
+    "options": ["display: block", "display: flex", "display: grid", "display: inline"],
+    "correctAnswer": 1,
+    "explanation": "display: flex creates a flex container, enabling flexbox layout.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What is the Virtual DOM?",
+    "options": [
+      "A copy of the real DOM stored on the server",
+      "A lightweight in-memory representation of the real DOM",
+      "A browser extension for DOM manipulation",
+      "The DOM rendered in a virtual machine"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Virtual DOM is a lightweight JS representation of the real DOM that enables efficient updates.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "question": "What does the 'key' prop do in React lists?",
+    "options": [
+      "Adds encryption to list items",
+      "Helps React identify which items have changed for efficient re-rendering",
+      "Sorts the list automatically",
+      "Makes list items clickable"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Keys help React identify which items changed, added, or removed for efficient reconciliation.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "question": "What is the CSS Box Model order from inside to outside?",
+    "options": [
+      "Margin → Border → Padding → Content",
+      "Content → Padding → Border → Margin",
+      "Content → Margin → Border → Padding",
+      "Padding → Content → Border → Margin"
+    ],
+    "correctAnswer": 1,
+    "explanation": "From inside out: Content → Padding → Border → Margin.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "question": "What is event delegation in JavaScript?",
+    "options": [
+      "Delegating events to a web worker",
+      "Attaching a single event handler to a parent to handle events on children",
+      "Creating custom events",
+      "Removing event listeners after use"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Event delegation uses event bubbling to handle events at a parent level instead of each child.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "question": "What does 'use strict' do in JavaScript?",
+    "options": [
+      "Makes the code run faster",
+      "Enables strict mode which catches common mistakes and unsafe actions",
+      "Restricts the use of global variables only",
+      "Forces TypeScript-like type checking"
+    ],
+    "correctAnswer": 1,
+    "explanation": "'use strict' enables strict mode, catching silent errors and preventing unsafe actions.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 7,
+    "question": "What is the purpose of a Service Worker?",
+    "options": [
+      "To run database queries",
+      "To act as a proxy between the app and network, enabling offline support",
+      "To speed up JavaScript execution",
+      "To manage CSS animations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Service Workers intercept network requests and enable offline functionality and caching.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 8,
+    "question": "What is the difference between '==' and '===' in JavaScript?",
+    "options": [
+      "There is no difference",
+      "'==' checks value with type coercion, '===' checks value and type strictly",
+      "'===' is faster than '=='",
+      "'==' is deprecated in ES6"
+    ],
+    "correctAnswer": 1,
+    "explanation": "'==' performs type coercion before comparison, '===' requires both value and type to match.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 9,
+    "question": "Which technique improves web performance by loading images only when they enter the viewport?",
+    "options": ["Eager Loading", "Lazy Loading", "Preloading", "Hot Loading"],
+    "correctAnswer": 1,
+    "explanation": "Lazy loading defers loading of off-screen images until the user scrolls to them.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "question": "What is the purpose of the useEffect hook in React?",
+    "options": [
+      "To define state variables",
+      "To perform side effects (data fetching, subscriptions, DOM manipulation)",
+      "To create custom components",
+      "To style components dynamically"
+    ],
+    "correctAnswer": 1,
+    "explanation": "useEffect handles side effects like API calls, event listeners, and cleanup in functional components.",
+    "difficulty": "medium"
+  }
+]

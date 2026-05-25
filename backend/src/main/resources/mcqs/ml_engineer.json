@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "question": "What is the vanishing gradient problem?",
+    "options": [
+      "When weights become too large",
+      "When gradients become extremely small during backpropagation, slowing deep network training",
+      "When data disappears during processing",
+      "When the model converges too quickly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Vanishing gradients occur when gradients shrink exponentially through layers, preventing deep layers from learning.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "question": "What is the purpose of a feature store?",
+    "options": [
+      "To store raw data files",
+      "To centralize, manage, and serve ML features for training and inference consistently",
+      "To display model features in a UI",
+      "To store model weights"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Feature stores centralize feature engineering, ensuring consistency between training and serving.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 3,
+    "question": "What is transfer learning?",
+    "options": [
+      "Moving data between servers",
+      "Using a pre-trained model as a starting point for a new but related task",
+      "Transferring models between programming languages",
+      "Learning multiple languages simultaneously"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Transfer learning reuses knowledge from a model trained on one task for a different but related task.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "question": "What does model quantization achieve?",
+    "options": [
+      "Increases model accuracy",
+      "Reduces model size and inference time by using lower precision numbers",
+      "Adds more layers to the model",
+      "Encrypts model parameters"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Quantization converts model weights from float32 to int8/float16, reducing size and speeding inference.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "question": "What is the purpose of MLflow?",
+    "options": [
+      "To train models faster",
+      "To manage the ML lifecycle: experiment tracking, model registry, and deployment",
+      "To clean training data",
+      "To visualize neural networks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MLflow is an open-source platform for managing the complete ML lifecycle.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "question": "What is data drift in ML?",
+    "options": [
+      "When data migrates between databases",
+      "When the statistical properties of the input data change over time, degrading model performance",
+      "When data is lost during processing",
+      "When data formats change"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data drift occurs when production data distribution differs from training data, causing model degradation.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "question": "What is the role of an attention mechanism in transformers?",
+    "options": [
+      "To speed up training",
+      "To weigh the importance of different parts of the input when making predictions",
+      "To reduce model size",
+      "To prevent overfitting"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Attention allows the model to focus on relevant parts of the input, enabling context-aware representations.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 8,
+    "question": "What is A/B testing in ML deployment?",
+    "options": [
+      "Testing the model on datasets A and B",
+      "Comparing two model versions by routing traffic between them and measuring outcomes",
+      "Testing models developed by teams A and B",
+      "Testing the first and last layers of a model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A/B testing routes user traffic between model versions to statistically determine which performs better.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 9,
+    "question": "Which tool is commonly used for building ML data pipelines?",
+    "options": ["Docker", "Apache Airflow", "Nginx", "Prometheus"],
+    "correctAnswer": 1,
+    "explanation": "Apache Airflow orchestrates complex ML data pipelines with scheduling and dependency management.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "question": "What is model distillation?",
+    "options": [
+      "Cleaning a model of unnecessary parameters",
+      "Training a smaller 'student' model to mimic a larger 'teacher' model's behavior",
+      "Converting a model to a different framework",
+      "Removing bias from a model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Distillation trains a compact model to replicate a larger model's predictions, achieving efficiency.",
+    "difficulty": "hard"
+  }
+]

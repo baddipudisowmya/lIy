@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "question": "What is the CIA triad in information security?",
+    "options": [
+      "Central Intelligence Agency guidelines",
+      "Confidentiality, Integrity, and Availability — the three core security principles",
+      "Cloud, Infrastructure, Application security layers",
+      "Create, Inspect, Audit workflow"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CIA triad: Confidentiality (privacy), Integrity (accuracy), Availability (accessible when needed).",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What is a SQL injection attack?",
+    "options": [
+      "Injecting SQL databases into a server",
+      "Inserting malicious SQL code into application queries to manipulate the database",
+      "A type of DDoS attack",
+      "Injecting JavaScript into SQL databases"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SQL injection inserts malicious SQL into queries, potentially exposing or modifying database data.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "question": "What is the difference between symmetric and asymmetric encryption?",
+    "options": [
+      "Symmetric is faster, asymmetric is slower — that's the only difference",
+      "Symmetric uses one key for both encrypt/decrypt; asymmetric uses a public/private key pair",
+      "Symmetric is for files, asymmetric is for messages",
+      "There is no significant difference"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Symmetric encryption uses one shared key; asymmetric uses a key pair (public encrypts, private decrypts).",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "question": "What is a zero-day vulnerability?",
+    "options": [
+      "A vulnerability that was fixed immediately",
+      "A previously unknown vulnerability exploited before a patch is available",
+      "A vulnerability found on day zero of a project",
+      "A vulnerability with zero impact"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Zero-day = unknown flaw exploited by attackers before the vendor knows or can patch it.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "question": "What is the purpose of a SIEM system?",
+    "options": [
+      "To encrypt network traffic",
+      "To aggregate and analyze security data from across the organization for threat detection",
+      "To manage user passwords",
+      "To block malware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SIEM aggregates logs from multiple sources, correlates events, and detects security threats.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "question": "What is multi-factor authentication (MFA)?",
+    "options": [
+      "Using multiple passwords",
+      "Requiring two or more verification factors (knowledge, possession, inherence) to gain access",
+      "Authenticating against multiple databases",
+      "Logging in from multiple devices"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MFA requires multiple verification factors (something you know, have, and/or are) for stronger security.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 7,
+    "question": "What is the principle of least privilege?",
+    "options": [
+      "Giving admins the most privileges",
+      "Granting users the minimum access rights needed to perform their job and nothing more",
+      "Having as few privileged users as possible",
+      "Removing all privileges after a set time"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Least privilege limits user access to only what's necessary, reducing the attack surface.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 8,
+    "question": "What is a penetration test?",
+    "options": [
+      "Testing network speed",
+      "An authorized simulated cyberattack to evaluate security defenses and find vulnerabilities",
+      "Testing the physical security of a building",
+      "A type of performance test"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A pen test simulates real attacks (with authorization) to identify and fix security weaknesses.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 9,
+    "question": "What is a DDoS attack?",
+    "options": [
+      "Direct Database Operating System attack",
+      "Distributed Denial of Service — overwhelming a target with traffic from multiple sources",
+      "A type of phishing attack",
+      "A data corruption attack"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DDoS floods a target with massive traffic from distributed sources, causing service unavailability.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 10,
+    "question": "What is the OWASP Top 10?",
+    "options": [
+      "A list of the top 10 programming languages for security",
+      "A standard awareness document listing the 10 most critical web application security risks",
+      "The 10 best security tools",
+      "A ranking of the 10 most secure websites"
+    ],
+    "correctAnswer": 1,
+    "explanation": "OWASP Top 10 lists the most critical web application security risks, updated periodically.",
+    "difficulty": "medium"
+  }
+]

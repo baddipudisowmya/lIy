@@ -1,0 +1,127 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "options": [
+      "Supervised uses GPUs, unsupervised uses CPUs",
+      "Supervised uses labeled data, unsupervised finds patterns in unlabeled data",
+      "Supervised is faster, unsupervised is more accurate",
+      "There is no significant difference"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Supervised learning uses labeled training data; unsupervised learning discovers hidden patterns without labels.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What does a p-value less than 0.05 typically indicate?",
+    "options": [
+      "The result is 95% accurate",
+      "The result is statistically significant — unlikely due to chance alone",
+      "The model has 5% error",
+      "The data has 5% missing values"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A p-value < 0.05 means there's less than 5% probability the result occurred by chance.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "question": "What is overfitting?",
+    "options": [
+      "When a model is too simple to capture patterns",
+      "When a model learns noise in training data and performs poorly on new data",
+      "When there is too much training data",
+      "When the model trains too slowly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Overfitting occurs when a model memorizes training data including noise, failing to generalize.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "question": "Which metric is best for evaluating imbalanced classification?",
+    "options": ["Accuracy", "F1-Score", "Mean Squared Error", "R-Squared"],
+    "correctAnswer": 1,
+    "explanation": "F1-Score balances precision and recall, making it ideal for imbalanced datasets where accuracy is misleading.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "question": "What is the purpose of cross-validation?",
+    "options": [
+      "To increase the training data size",
+      "To assess how well a model generalizes to independent data",
+      "To clean the dataset",
+      "To speed up training"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cross-validation estimates model performance on unseen data by rotating training/test splits.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 6,
+    "question": "What is the curse of dimensionality?",
+    "options": [
+      "When you have too few features",
+      "When increasing dimensions causes data to become sparse, making analysis harder",
+      "When your computer runs out of memory",
+      "When feature names are too long"
+    ],
+    "correctAnswer": 1,
+    "explanation": "As dimensions increase, data becomes sparse, distances become less meaningful, and models need exponentially more data.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 7,
+    "question": "What type of neural network is best suited for image classification?",
+    "options": [
+      "Recurrent Neural Network (RNN)",
+      "Convolutional Neural Network (CNN)",
+      "Generative Adversarial Network (GAN)",
+      "Autoencoder"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CNNs use convolutional layers to detect spatial patterns in images, making them ideal for image tasks.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 8,
+    "question": "What is regularization in machine learning?",
+    "options": [
+      "Making data regular-sized",
+      "A technique to prevent overfitting by adding a penalty to model complexity",
+      "Converting data to a regular format",
+      "Scheduling regular model updates"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Regularization (L1/L2) adds a penalty term to loss to discourage complex models and prevent overfitting.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "question": "What does PCA (Principal Component Analysis) do?",
+    "options": [
+      "Increases the number of features",
+      "Reduces dimensionality while preserving maximum variance",
+      "Classifies data into categories",
+      "Generates new training data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "PCA transforms data into fewer dimensions by finding directions of maximum variance.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "question": "When would you use a Random Forest over a single Decision Tree?",
+    "options": [
+      "When you need a simpler model",
+      "When you want better generalization through ensemble averaging to reduce variance",
+      "When training data is very small",
+      "When interpretability is the top priority"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Random Forest aggregates many trees to reduce overfitting and variance, improving generalization.",
+    "difficulty": "medium"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "title": "Data Scientist",
+  "key": "data_scientist",
+  "requiredSkills": [
+    "Python (NumPy, Pandas, Scikit-learn)",
+    "Statistics & Probability",
+    "Machine Learning Algorithms",
+    "Data Visualization (Matplotlib/Seaborn/Plotly)",
+    "SQL & Database Querying",
+    "Exploratory Data Analysis",
+    "Feature Engineering",
+    "Model Evaluation & Validation"
+  ],
+  "preferredSkills": [
+    "Deep Learning (TensorFlow/PyTorch)",
+    "NLP & Text Analytics",
+    "Big Data Tools (Spark/Hadoop)",
+    "Cloud ML Services",
+    "A/B Testing",
+    "Time Series Analysis",
+    "Computer Vision",
+    "MLOps & Model Deployment"
+  ],
+  "languages": ["Python", "R", "SQL", "Julia"],
+  "minExperienceYears": 0,
+  "typicalExperience": "0-4 years for entry to mid-level",
+  "mustHave": [
+    "Strong Python and statistics knowledge",
+    "Experience with ML algorithms",
+    "Data manipulation skills",
+    "Understanding of model evaluation"
+  ],
+  "niceToHave": [
+    "Kaggle competitions",
+    "Research publications",
+    "Domain expertise",
+    "Production ML experience"
+  ]
+}

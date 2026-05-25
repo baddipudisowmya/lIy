@@ -1,0 +1,39 @@
+{
+  "title": "ML Engineer",
+  "key": "ml_engineer",
+  "requiredSkills": [
+    "Python Programming",
+    "Machine Learning Frameworks (TensorFlow/PyTorch)",
+    "Model Training & Optimization",
+    "Data Pipeline Design",
+    "Model Deployment & Serving",
+    "MLOps (MLflow/Kubeflow)",
+    "Version Control (Git)",
+    "Software Engineering Best Practices"
+  ],
+  "preferredSkills": [
+    "Deep Learning & Neural Networks",
+    "Distributed Training",
+    "Feature Stores",
+    "Model Monitoring & Drift Detection",
+    "API Development (FastAPI/Flask)",
+    "Cloud ML Services (SageMaker/Vertex AI)",
+    "Computer Vision / NLP",
+    "Data Engineering (Spark/Airflow)"
+  ],
+  "languages": ["Python", "C++", "Java", "SQL"],
+  "minExperienceYears": 1,
+  "typicalExperience": "1-5 years for entry to mid-level",
+  "mustHave": [
+    "Strong Python and ML fundamentals",
+    "Experience deploying models to production",
+    "Understanding of ML lifecycle",
+    "Software engineering skills"
+  ],
+  "niceToHave": [
+    "Published papers or patents",
+    "Open source ML contributions",
+    "Production-scale ML systems experience",
+    "Edge/embedded ML experience"
+  ]
+}

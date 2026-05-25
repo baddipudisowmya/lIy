@@ -1,0 +1,39 @@
+{
+  "title": "Mobile Developer",
+  "key": "mobile_dev",
+  "requiredSkills": [
+    "Mobile App Development (iOS/Android)",
+    "UI/UX Implementation",
+    "State Management",
+    "RESTful API Integration",
+    "Local Storage & Caching",
+    "Push Notifications",
+    "App Store Deployment",
+    "Version Control (Git)"
+  ],
+  "preferredSkills": [
+    "Cross-Platform (React Native/Flutter)",
+    "Native Development (Swift/Kotlin)",
+    "Mobile Testing (XCTest/Espresso)",
+    "Offline-First Architecture",
+    "Performance Optimization",
+    "CI/CD for Mobile",
+    "Analytics Integration",
+    "Accessibility"
+  ],
+  "languages": ["Swift", "Kotlin", "Dart", "JavaScript", "Java", "Objective-C"],
+  "minExperienceYears": 0,
+  "typicalExperience": "0-4 years for entry to mid-level",
+  "mustHave": [
+    "Published app on App Store or Play Store",
+    "Understanding of mobile UI patterns",
+    "API integration experience",
+    "Mobile lifecycle management"
+  ],
+  "niceToHave": [
+    "Cross-platform development experience",
+    "App performance optimization",
+    "CI/CD for mobile apps",
+    "AR/VR mobile experience"
+  ]
+}

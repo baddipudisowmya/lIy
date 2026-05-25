@@ -1,0 +1,39 @@
+{
+  "title": "Frontend Developer (FDE)",
+  "key": "fde",
+  "requiredSkills": [
+    "HTML5 & Semantic Markup",
+    "CSS3 & Responsive Design",
+    "JavaScript (ES6+)",
+    "React.js or Vue.js or Angular",
+    "Browser Developer Tools",
+    "Cross-Browser Compatibility",
+    "Accessibility (a11y)",
+    "Version Control (Git)"
+  ],
+  "preferredSkills": [
+    "TypeScript",
+    "State Management (Redux/Vuex/Zustand)",
+    "CSS Preprocessors (SASS/LESS)",
+    "Build Tools (Webpack/Vite)",
+    "Testing (Jest/Cypress)",
+    "UI/UX Design Principles",
+    "Performance Optimization",
+    "Next.js/Nuxt.js"
+  ],
+  "languages": ["JavaScript", "TypeScript", "HTML", "CSS"],
+  "minExperienceYears": 0,
+  "typicalExperience": "0-4 years for entry to mid-level",
+  "mustHave": [
+    "Proficiency in HTML, CSS, and JavaScript",
+    "Experience with at least one modern framework",
+    "Understanding of responsive design",
+    "API integration experience"
+  ],
+  "niceToHave": [
+    "Design tool proficiency (Figma/Sketch)",
+    "Animation libraries experience",
+    "SSR/SSG knowledge",
+    "Portfolio of web projects"
+  ]
+}

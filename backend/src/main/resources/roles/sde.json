@@ -1,0 +1,37 @@
+{
+  "title": "Software Development Engineer (SDE)",
+  "key": "sde",
+  "requiredSkills": [
+    "Data Structures & Algorithms",
+    "Object-Oriented Programming",
+    "System Design",
+    "Version Control (Git)",
+    "SQL & Database Design",
+    "REST API Design",
+    "Unit Testing",
+    "Problem Solving"
+  ],
+  "preferredSkills": [
+    "Cloud Services (AWS/GCP/Azure)",
+    "Docker & Containerization",
+    "CI/CD Pipelines",
+    "Microservices Architecture",
+    "Agile/Scrum Methodology",
+    "Code Review Practices"
+  ],
+  "languages": ["Java", "Python", "C++", "JavaScript", "Go", "Rust"],
+  "minExperienceYears": 0,
+  "typicalExperience": "0-5 years for entry to mid-level",
+  "mustHave": [
+    "Strong DSA fundamentals",
+    "At least one programming language proficiency",
+    "Understanding of OOP concepts",
+    "Basic database knowledge"
+  ],
+  "niceToHave": [
+    "Open source contributions",
+    "Competitive programming background",
+    "System design experience",
+    "Published technical blogs"
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between verification and validation in testing?",
+    "options": [
+      "They are the same thing",
+      "Verification checks 'are we building the product right?', Validation checks 'are we building the right product?'",
+      "Verification is manual, Validation is automated",
+      "Verification is done by developers, Validation by testers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Verification = building the product right (process). Validation = building the right product (output).",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What type of testing validates the entire system end-to-end?",
+    "options": ["Unit Testing", "Integration Testing", "System Testing", "Smoke Testing"],
+    "correctAnswer": 2,
+    "explanation": "System Testing validates the complete and integrated system against requirements.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "question": "What is boundary value analysis?",
+    "options": [
+      "Testing random values",
+      "Testing values at the edges of input domains (min, max, just inside/outside)",
+      "Testing only the middle values",
+      "Testing with null values only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BVA tests values at the boundaries of equivalence partitions where bugs often hide.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "question": "What is regression testing?",
+    "options": [
+      "Testing new features only",
+      "Re-running tests after code changes to ensure existing functionality still works",
+      "Testing the login functionality",
+      "Testing backwards compatibility only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Regression testing ensures that new changes haven't broken existing functionality.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "question": "What does code coverage measure?",
+    "options": [
+      "How many bugs are found",
+      "The percentage of code executed during testing",
+      "How fast tests run",
+      "How many testers are needed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Code coverage measures the percentage of code lines/branches executed by the test suite.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "question": "In Selenium WebDriver, what is the Page Object Model?",
+    "options": [
+      "A way to model database tables",
+      "A design pattern that creates an object repository for web elements",
+      "A tool for generating test data",
+      "A method of page caching"
+    ],
+    "correctAnswer": 1,
+    "explanation": "POM is a design pattern that creates a separate class for each page to reduce code duplication.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "question": "What is a test stub?",
+    "options": [
+      "An incomplete test case",
+      "A simplified replacement for a dependency that returns predefined responses",
+      "A test that always fails",
+      "A placeholder for a future test"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A stub provides canned answers to calls during testing, replacing actual dependencies.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "question": "What is the testing pyramid (from bottom to top)?",
+    "options": [
+      "E2E → Integration → Unit",
+      "Unit → Integration → E2E",
+      "Unit → E2E → Integration",
+      "Integration → Unit → E2E"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The testing pyramid: many Unit tests at the base, fewer Integration, fewest E2E tests at top.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 9,
+    "question": "What HTTP status code should you verify for a successful API POST request?",
+    "options": ["200 OK", "201 Created", "204 No Content", "301 Moved Permanently"],
+    "correctAnswer": 1,
+    "explanation": "201 Created is the proper response for a successful POST that creates a new resource.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "question": "What is mutation testing?",
+    "options": [
+      "Testing with corrupted data",
+      "Changing source code in small ways to check if tests catch the changes",
+      "Testing gene-related software",
+      "Testing during code refactoring"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Mutation testing introduces small changes (mutants) to code to see if existing tests catch them.",
+    "difficulty": "hard"
+  }
+]

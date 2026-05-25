@@ -1,0 +1,39 @@
+{
+  "title": "DevOps Engineer",
+  "key": "devops",
+  "requiredSkills": [
+    "Linux System Administration",
+    "Docker & Containerization",
+    "CI/CD Pipelines (Jenkins/GitHub Actions/GitLab CI)",
+    "Cloud Platforms (AWS/GCP/Azure)",
+    "Infrastructure as Code (Terraform/CloudFormation)",
+    "Shell Scripting (Bash)",
+    "Monitoring & Logging (Prometheus/Grafana/ELK)",
+    "Version Control (Git)"
+  ],
+  "preferredSkills": [
+    "Kubernetes & Orchestration",
+    "Ansible/Chef/Puppet",
+    "Networking Fundamentals",
+    "Security Best Practices",
+    "Service Mesh (Istio)",
+    "Database Administration",
+    "Performance Tuning",
+    "Incident Management"
+  ],
+  "languages": ["Bash", "Python", "Go", "YAML", "HCL"],
+  "minExperienceYears": 1,
+  "typicalExperience": "1-5 years for entry to mid-level",
+  "mustHave": [
+    "Linux proficiency",
+    "Container experience",
+    "CI/CD understanding",
+    "At least one cloud platform"
+  ],
+  "niceToHave": [
+    "AWS/GCP/Azure certifications",
+    "Kubernetes CKA/CKAD",
+    "Site Reliability Engineering experience",
+    "Chaos engineering knowledge"
+  ]
+}

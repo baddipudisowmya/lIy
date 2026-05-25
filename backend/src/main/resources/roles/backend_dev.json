@@ -1,0 +1,39 @@
+{
+  "title": "Backend Developer",
+  "key": "backend_dev",
+  "requiredSkills": [
+    "Server-Side Programming (Java/Python/Node.js/Go)",
+    "REST API Design & Development",
+    "Database Design (SQL & NoSQL)",
+    "Authentication & Authorization",
+    "Caching Strategies (Redis/Memcached)",
+    "Message Queues (RabbitMQ/Kafka)",
+    "Version Control (Git)",
+    "Unit & Integration Testing"
+  ],
+  "preferredSkills": [
+    "Microservices Architecture",
+    "GraphQL",
+    "gRPC",
+    "Event-Driven Architecture",
+    "Docker & Kubernetes",
+    "API Gateway & Load Balancing",
+    "Database Optimization",
+    "Monitoring & Observability"
+  ],
+  "languages": ["Java", "Python", "Go", "Node.js", "C#", "Rust"],
+  "minExperienceYears": 0,
+  "typicalExperience": "0-5 years for entry to mid-level",
+  "mustHave": [
+    "Proficiency in at least one backend language",
+    "API design experience",
+    "Database knowledge",
+    "Understanding of web protocols"
+  ],
+  "niceToHave": [
+    "High-traffic system experience",
+    "Distributed systems knowledge",
+    "Open source contributions",
+    "Performance optimization experience"
+  ]
+}

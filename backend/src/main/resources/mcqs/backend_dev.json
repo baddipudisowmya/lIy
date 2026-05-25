@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "question": "What is REST and what does it stand for?",
+    "options": [
+      "Remote Execution Standard Transfer",
+      "Representational State Transfer — an architectural style for networked applications",
+      "Real-time Event Streaming Technology",
+      "Rapid Enterprise Service Toolkit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "REST (Representational State Transfer) is an architectural style using standard HTTP methods for web services.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What is database normalization?",
+    "options": [
+      "Making a database faster",
+      "Organizing data to reduce redundancy and improve data integrity through normal forms",
+      "Backing up the database",
+      "Converting data to a standard format"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Normalization structures data into tables to eliminate redundancy and ensure data integrity.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "question": "What is the N+1 query problem?",
+    "options": [
+      "Having N+1 database tables",
+      "When fetching a list requires 1 query for the list + N queries for each item's related data",
+      "When N+1 users access the database simultaneously",
+      "Having one extra column in a table"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The N+1 problem causes excessive queries: 1 for the parent list and N for each child's data.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "question": "What is the purpose of a message queue like RabbitMQ?",
+    "options": [
+      "To send emails",
+      "To decouple services by enabling asynchronous message passing between producers and consumers",
+      "To store log files",
+      "To manage user sessions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Message queues enable async communication between services, improving resilience and scalability.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "options": [
+      "SQL is old, NoSQL is new",
+      "SQL uses structured tables with schemas; NoSQL uses flexible schemas (document, key-value, graph, etc.)",
+      "SQL is faster, NoSQL is slower",
+      "SQL is free, NoSQL is paid"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SQL enforces rigid schemas in relational tables; NoSQL offers flexible schemas for varied data models.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 6,
+    "question": "What is connection pooling?",
+    "options": [
+      "Sharing internet connections",
+      "Reusing a pool of database connections instead of creating/destroying them for each request",
+      "Connecting multiple databases together",
+      "A type of load balancing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Connection pooling maintains reusable database connections, reducing the overhead of connection creation.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "question": "What does ACID stand for in databases?",
+    "options": [
+      "Automated Consistent Internal Database",
+      "Atomicity, Consistency, Isolation, Durability",
+      "Advanced Concurrent Integrated Design",
+      "Asynchronous Cached Index Distribution"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ACID ensures reliable transactions: Atomicity, Consistency, Isolation, Durability.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 8,
+    "question": "What is rate limiting and why is it important?",
+    "options": [
+      "Limiting the database size",
+      "Controlling the number of requests a client can make to prevent abuse and ensure fair usage",
+      "Limiting the speed of data transfer",
+      "Restricting the number of database tables"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Rate limiting controls request frequency to protect against abuse, DDoS, and ensure fair resource usage.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "question": "What is the Circuit Breaker pattern?",
+    "options": [
+      "A way to break database connections",
+      "A pattern that prevents cascading failures by stopping calls to a failing service",
+      "A way to debug electrical systems",
+      "A pattern for breaking up monoliths"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit Breaker detects repeated failures and stops calling a failing service to prevent cascade failures.",
+    "difficulty": "hard"
+  },
+  {
+    "id": 10,
+    "question": "What is JWT (JSON Web Token) used for?",
+    "options": [
+      "Compressing JSON data",
+      "Stateless authentication and authorization by encoding user claims in a signed token",
+      "Creating JSON databases",
+      "Formatting API responses"
+    ],
+    "correctAnswer": 1,
+    "explanation": "JWT enables stateless auth by encoding claims into a self-contained, signed token.",
+    "difficulty": "easy"
+  }
+]

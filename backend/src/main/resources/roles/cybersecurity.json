@@ -1,0 +1,39 @@
+{
+  "title": "Cybersecurity Analyst",
+  "key": "cybersecurity",
+  "requiredSkills": [
+    "Network Security",
+    "Vulnerability Assessment",
+    "SIEM Tools (Splunk/QRadar)",
+    "Incident Response",
+    "Security Frameworks (NIST/ISO 27001)",
+    "Penetration Testing Basics",
+    "Firewall & IDS/IPS",
+    "Risk Assessment"
+  ],
+  "preferredSkills": [
+    "Ethical Hacking",
+    "Cloud Security",
+    "Malware Analysis",
+    "Digital Forensics",
+    "Compliance & Auditing",
+    "Threat Intelligence",
+    "Security Automation (SOAR)",
+    "Cryptography"
+  ],
+  "languages": ["Python", "Bash", "PowerShell", "SQL", "C"],
+  "minExperienceYears": 0,
+  "typicalExperience": "0-4 years for entry to mid-level",
+  "mustHave": [
+    "Understanding of security fundamentals",
+    "Network protocol knowledge",
+    "Incident response basics",
+    "Risk assessment skills"
+  ],
+  "niceToHave": [
+    "Security certifications (CompTIA Security+/CEH/CISSP)",
+    "CTF competition experience",
+    "Bug bounty achievements",
+    "SOC experience"
+  ]
+}

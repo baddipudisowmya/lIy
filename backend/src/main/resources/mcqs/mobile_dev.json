@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "question": "What is the difference between Activities and Fragments in Android?",
+    "options": [
+      "They are the same thing",
+      "Activity is a full screen; Fragment is a reusable portion of UI within an Activity",
+      "Fragment is newer and replaces Activity",
+      "Activity is for UI, Fragment is for logic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An Activity represents a full screen, while a Fragment is a modular, reusable UI piece within an Activity.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "question": "What is the purpose of a ViewModel in mobile development?",
+    "options": [
+      "To render UI components",
+      "To store and manage UI-related data that survives configuration changes like screen rotation",
+      "To make network requests",
+      "To manage database connections"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ViewModel preserves UI state across configuration changes (rotation, etc.) and separates UI logic.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "question": "What is Flutter's widget tree?",
+    "options": [
+      "A file directory structure",
+      "A hierarchical structure of widgets that describes the UI, rebuilt on state changes",
+      "A logging mechanism",
+      "A dependency management system"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Flutter's UI is a tree of widgets, rebuilt efficiently when state changes using diffing.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "question": "What is the purpose of ProGuard/R8 in Android?",
+    "options": [
+      "To protect against hacking",
+      "To shrink, obfuscate, and optimize the APK by removing unused code",
+      "To manage user permissions",
+      "To encrypt network traffic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ProGuard/R8 reduces APK size by removing unused code and obfuscating class/method names.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "question": "What is the difference between hot reload and hot restart in Flutter?",
+    "options": [
+      "They are the same thing",
+      "Hot reload preserves app state while injecting code changes; hot restart resets state",
+      "Hot reload is faster but less accurate",
+      "Hot restart only works in debug mode"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hot reload updates code while keeping app state; hot restart restarts the app from scratch.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 6,
+    "question": "What is the iOS app lifecycle?",
+    "options": [
+      "Build → Test → Deploy",
+      "Not Running → Inactive → Active → Background → Suspended",
+      "Launch → Run → Close",
+      "Create → Start → Stop → Destroy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "iOS apps transition through: Not Running → Inactive → Active → Background → Suspended.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "question": "What is responsive design in mobile development?",
+    "options": [
+      "Making apps respond quickly to user input",
+      "Designing UIs that adapt to different screen sizes, orientations, and devices",
+      "Using fast algorithms",
+      "Responding to push notifications quickly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Responsive design creates UIs that work well across different screen sizes and device types.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 8,
+    "question": "What is the purpose of dependency injection in mobile apps?",
+    "options": [
+      "To install third-party libraries",
+      "To provide dependencies externally rather than creating them internally, improving testability",
+      "To check for security vulnerabilities",
+      "To manage app store deployments"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DI supplies dependencies from outside, enabling loose coupling and easier unit testing.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "question": "What is Jetpack Compose?",
+    "options": [
+      "A music composition app",
+      "Android's modern declarative UI toolkit for building native interfaces with Kotlin",
+      "A database library",
+      "A networking framework"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Jetpack Compose is Android's declarative UI toolkit that simplifies UI development with Kotlin.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 10,
+    "question": "What is the purpose of app signing in mobile development?",
+    "options": [
+      "To add a digital signature logo to the app",
+      "To verify the app's identity and integrity, ensuring it hasn't been tampered with",
+      "To sign user agreements",
+      "To encrypt all app data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "App signing cryptographically verifies the developer's identity and the app's integrity.",
+    "difficulty": "medium"
+  }
+]
