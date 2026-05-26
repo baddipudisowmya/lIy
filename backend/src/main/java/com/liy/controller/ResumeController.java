@@ -1,16 +1,28 @@
 package com.liy.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.liy.model.*;
+import com.liy.model.McqQuestion;
+import com.liy.model.McqSubmission;
 import com.liy.service.LlmService;
 import com.liy.service.McqService;
 import com.liy.service.PdfParserService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.*;
 
 @RestController
 @RequestMapping("/api")
@@ -32,6 +44,7 @@ public class ResumeController {
      * Upload resume PDF + select roles → LLM Call 1 (Resume Analysis) + LLM Call 2 (Verdict)
      */
     @PostMapping("/analyze")
+    
     public ResponseEntity<?> analyzeResume(
             @RequestParam("file") MultipartFile file,
             @RequestParam("roles") List<String> roles) {
@@ -137,6 +150,15 @@ public class ResumeController {
         roles.put("cloud_architect", "Cloud Architect");
         roles.put("cybersecurity", "Cybersecurity Analyst");
         return ResponseEntity.ok(roles);
+    }
+
+    /**
+     * GET / or /api
+     * Root endpoint redirects to health check
+     */
+    @GetMapping({"/", "/api"})
+    public ResponseEntity<?> root() {
+        return ResponseEntity.ok(Map.of("status", "UP", "app", "LIY - Let's Interview You", "message", "Welcome to LIY API"));
     }
 
     /**
