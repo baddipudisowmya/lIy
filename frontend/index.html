@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LIY - Let's Interview You. AI-powered resume analyzer and interview readiness assessment platform.">
+    <title>LIY — Let's Interview You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Particle canvas background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- App container -->
+    <div id="app">
+
+        <!-- ===== SCREEN 1: UPLOAD ===== -->
+        <section id="screen-upload" class="screen active">
+            <div class="screen-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="22" stroke="url(#logo-grad)" stroke-width="3"/>
+                            <path d="M16 14h2v16h8v2H16V14z" fill="url(#logo-grad)"/>
+                            <path d="M22 14h2v18h-2V14z" fill="url(#logo-grad)" opacity="0.7"/>
+                            <path d="M28 14h2v8l4-8h2.5l-4.5 8.5L37 32h-2.5l-4.5-8.5V32h-2V14z" fill="url(#logo-grad)"/>
+                            <defs>
+                                <linearGradient id="logo-grad" x1="0" y1="0" x2="48" y2="48">
+                                    <stop stop-color="#a855f7"/>
+                                    <stop offset="1" stop-color="#6366f1"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h1 class="logo-title">LIY</h1>
+                    <p class="logo-subtitle">Let's Interview You</p>
+                    <p class="logo-desc">AI-powered resume analysis &amp; interview readiness assessment</p>
+                </div>
+
+                <div class="upload-card glass-card">
+                    <div class="upload-zone" id="upload-zone">
+                        <div class="upload-icon">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <p class="upload-text">Drop your resume here</p>
+                        <p class="upload-subtext">or click to browse • PDF only • Max 10MB</p>
+                        <input type="file" id="file-input" accept=".pdf" hidden>
+                    </div>
+                    <div class="file-info" id="file-info" style="display:none;">
+                        <div class="file-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                            </svg>
+                            <span id="file-name"></span>
+                            <button id="file-remove" class="file-remove-btn">&times;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roles-section glass-card">
+                    <h2 class="roles-title">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        Select Target Roles
+                    </h2>
+                    <p class="roles-desc">Choose the roles you want to evaluate your readiness for</p>
+                    <div class="roles-grid" id="roles-grid">
+                        <!-- Roles loaded dynamically -->
+                    </div>
+                </div>
+
+                <button id="btn-analyze" class="btn-primary" disabled>
+                    <span class="btn-text">Analyze My Resume</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ===== SCREEN 2: PROCESSING ===== -->
+        <section id="screen-processing" class="screen">
+            <div class="screen-content processing-content">
+                <div class="processing-visual">
+                    <canvas id="processing-canvas" width="300" height="300"></canvas>
+                    <div class="processing-ring"></div>
+                    <div class="processing-ring ring-2"></div>
+                    <div class="processing-ring ring-3"></div>
+                </div>
+                <div class="processing-text-area">
+                    <h2 class="processing-title" id="processing-title">Analyzing Your Resume...</h2>
+                    <p class="processing-subtitle" id="processing-subtitle">Extracting skills and experience</p>
+                    <div class="suspense-messages" id="suspense-messages">
+                        <div class="suspense-msg active">🔍 Scanning your resume...</div>
+                    </div>
+                </div>
+                <div class="magic-8ball" id="magic-8ball">
+                    <div class="ball-outer">
+                        <div class="ball-inner">
+                            <span id="ball-text">?</span>
+                        </div>
+                    </div>
+                    <p class="ball-label">Will you pass?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SCREEN 3: VERDICT ===== -->
+        <section id="screen-verdict" class="screen">
+            <canvas id="verdict-canvas"></canvas>
+            <div class="screen-content verdict-content">
+                <div class="verdict-reveal" id="verdict-reveal">
+                    <div class="verdict-badge" id="verdict-badge">
+                        <div class="verdict-icon" id="verdict-icon"></div>
+                        <h2 class="verdict-text" id="verdict-text"></h2>
+                        <p class="verdict-confidence" id="verdict-confidence"></p>
+                    </div>
+                </div>
+                <div class="verdict-details" id="verdict-details">
+                    <!-- Role cards populated dynamically -->
+                </div>
+                <div class="verdict-actions">
+                    <button id="btn-take-quiz" class="btn-primary">
+                        <span class="btn-text">Take the Domain Quiz</span>
+                        <span class="btn-icon">📝</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SCREEN 4: MCQ QUIZ ===== -->
+        <section id="screen-mcq" class="screen">
+            <div class="screen-content mcq-content">
+                <div class="mcq-header">
+                    <div class="mcq-progress-bar">
+                        <div class="mcq-progress-fill" id="mcq-progress-fill"></div>
+                    </div>
+                    <div class="mcq-info">
+                        <span class="mcq-role-badge" id="mcq-role-badge"></span>
+                        <span class="mcq-counter" id="mcq-counter">Question 1 / 10</span>
+                    </div>
+                </div>
+                <div class="mcq-card glass-card" id="mcq-card">
+                    <div class="mcq-difficulty" id="mcq-difficulty"></div>
+                    <h3 class="mcq-question" id="mcq-question"></h3>
+                    <div class="mcq-options" id="mcq-options"></div>
+                </div>
+                <div class="mcq-actions">
+                    <button id="btn-mcq-next" class="btn-primary" disabled>
+                        <span class="btn-text">Next Question</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SCREEN 5: RESULTS ===== -->
+        <section id="screen-results" class="screen">
+            <div class="screen-content results-content">
+                <div class="results-header">
+                    <h2 class="results-title">Your Readiness Report</h2>
+                    <p class="results-subtitle">Comprehensive assessment based on resume + quiz performance</p>
+                </div>
+
+                <div class="readiness-gauge" id="readiness-gauge">
+                    <svg viewBox="0 0 200 200" class="gauge-svg">
+                        <circle cx="100" cy="100" r="85" class="gauge-bg"/>
+                        <circle cx="100" cy="100" r="85" class="gauge-fill" id="gauge-fill"
+                                stroke-dasharray="534" stroke-dashoffset="534"/>
+                    </svg>
+                    <div class="gauge-value">
+                        <span class="gauge-number" id="gauge-number">0</span>
+                        <span class="gauge-percent">%</span>
+                        <span class="gauge-label">Ready</span>
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card glass-card" id="card-observations">
+                        <h3 class="result-card-title">
+                            <span class="result-icon">🔎</span> Observations
+                        </h3>
+                        <ul class="result-list" id="observations-list"></ul>
+                    </div>
+
+                    <div class="result-card glass-card" id="card-suggestions">
+                        <h3 class="result-card-title">
+                            <span class="result-icon">💡</span> Suggestions
+                        </h3>
+                        <ul class="result-list" id="suggestions-list"></ul>
+                    </div>
+
+                    <div class="result-card glass-card full-width" id="card-role-readiness">
+                        <h3 class="result-card-title">
+                            <span class="result-icon">📊</span> Role-wise Readiness
+                        </h3>
+                        <div class="role-readiness-grid" id="role-readiness-grid"></div>
+                    </div>
+
+                    <div class="result-card glass-card full-width" id="card-mcq-scores">
+                        <h3 class="result-card-title">
+                            <span class="result-icon">📝</span> Quiz Scores
+                        </h3>
+                        <div class="mcq-scores-grid" id="mcq-scores-grid"></div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="btn-restart" class="btn-secondary">
+                        <span class="btn-text">Try Another Resume</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/effects.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
