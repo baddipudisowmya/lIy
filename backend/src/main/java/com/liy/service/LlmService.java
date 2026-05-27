@@ -174,6 +174,10 @@ public class LlmService {
 
     private String callLlm(String prompt) {
         try {
+            System.out.println("\n🔵 CALLING HuggingFace LLM API");
+            System.out.println("Model: " + model);
+            System.out.println("Prompt length: " + prompt.length());
+
             Map<String, Object> body = new HashMap<>();
             body.put("model", model);
             body.put("messages", List.of(
@@ -182,6 +186,7 @@ public class LlmService {
             body.put("max_tokens", 2000);
             body.put("temperature", 0.3);
 
+            System.out.println("Sending request to HuggingFace API...");
             String response = webClient.post()
                     .uri("/chat/completions")
                     .bodyValue(body)
@@ -190,27 +195,45 @@ public class LlmService {
                     .timeout(Duration.ofSeconds(120))
                     .block();
 
+            System.out.println("✅ Response received! Length: " + response.length());
+            System.out.println("Response preview: " + response.substring(0, Math.min(200, response.length())));
+
             // Parse the response to extract the content
             JsonNode root = objectMapper.readTree(response);
-            String content = root.path("choices").get(0).path("message").path("content").asText();
+            JsonNode choicesNode = root.path("choices");
+
+            if (!choicesNode.isArray() || choicesNode.isEmpty()) {
+                System.err.println("🔴 ERROR: 'choices' field missing or empty");
+                System.err.println("Full response: " + response);
+                return getFallbackResponse();
+            }
+
+            String content = choicesNode.get(0).path("message").path("content").asText();
+
+            if (content.isEmpty()) {
+                System.err.println("🔴 ERROR: 'content' field is empty");
+                return getFallbackResponse();
+            }
+
+            System.out.println("Content extracted, length: " + content.length());
 
             // Clean up - remove markdown code blocks if present
             content = content.trim();
-            if (content.startsWith("```json")) {
-                content = content.substring(7);
-            } else if (content.startsWith("```")) {
-                content = content.substring(3);
+            if (content.startsWith("```json") && content.endsWith("```")) {
+                content = content.substring(7, content.length() - 3).trim();
+            } else if (content.startsWith("```") && content.endsWith("```")) {
+                content = content.substring(3, content.length() - 3).trim();
             }
-            if (content.endsWith("```")) {
-                content = content.substring(0, content.length() - 3);
-            }
+
+            System.out.println("✅ SUCCESS! Returning content");
             return content.trim();
 
         } catch (WebClientResponseException e) {
-            System.err.println("LLM API error: " + e.getStatusCode() + " - " + e.getResponseBodyAsString());
+            System.err.println("🔴 LLM API HTTP error: " + e.getStatusCode() + " - " + e.getStatusText());
+            System.err.println("Response: " + e.getResponseBodyAsString());
             return getFallbackResponse();
         } catch (Exception e) {
-            System.err.println("LLM call failed: " + e.getMessage());
+            System.err.println("🔴 LLM call failed: " + e.getClass().getSimpleName() + " - " + e.getMessage());
             e.printStackTrace();
             return getFallbackResponse();
         }
