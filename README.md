@@ -1,177 +1,191 @@
 # 🎯 LIY — Let's Interview You
 
-<p align="center">
-  <strong>AI-Powered Resume Analyzer & Interview Readiness Platform</strong>
-</p>
+**AI-Powered Resume Analyzer for Job Seekers**
 
-<p align="center">
-  Upload your resume • Select target roles • Get instant AI analysis • Take domain quizzes • Know your readiness
-</p>
+Upload your resume, select your experience level, choose roles you're interested in, and get personalized AI feedback with a learning roadmap.
 
 ---
 
-## 🚀 What is LIY?
+## 🚀 Project Overview
 
-**LIY (Let's Interview You)** is a full-stack application that analyzes your resume against industry-standard role requirements using AI, provides a dramatic pass/fail verdict, tests your domain knowledge with MCQs, and gives you a comprehensive readiness assessment with actionable suggestions.
+**LIY (Let's Interview You)** is an AI-powered platform that analyzes your resume and tells you exactly what you need to focus on to land your dream job.
 
-### ✨ Features
+**The Problem:**
+Job seekers often struggle with: "Will my resume match this role?" or "What skills should I learn?" Without personalized feedback, preparing for interviews becomes guesswork.
 
-- 📄 **Resume Upload** — Drag & drop PDF upload with instant text extraction
-- 🎯 **Multi-Role Targeting** — Check qualifications for 10+ tech roles simultaneously
-- 🤖 **AI-Powered Analysis** — 3-stage LLM pipeline using Meta LLaMA 3.1 via HuggingFace
-- 🎬 **Dramatic Verdict** — Suspenseful processing animation with particle effects for pass/fail reveal
-- 📝 **Domain MCQ Quiz** — 10 curated questions per role to validate knowledge
-- 📊 **Readiness Dashboard** — Percentage score, observations, and personalized improvement suggestions
+**The Solution:**
+- Upload your resume in seconds
+- Get an honest AI evaluation against the role you want
+- Receive a personalized learning roadmap
+- Practice with role-specific interview questions
 
-### 🏗️ Architecture
+**Why LIY?**
+- Fair evaluation based on your experience level (not comparing freshers to seniors)
+- Encouraging, growth-focused feedback (never negative)
+- Actionable roadmaps, not just scores
+- 4-week structured learning plan
+- Ready-to-practice interview questions
 
-```
-┌─────────────────┐     REST API      ┌──────────────────────┐      API       ┌──────────────┐
-│    Frontend     │ ◄──────────────► │  Spring Boot Backend  │ ◄────────────► │ HuggingFace  │
-│  HTML/CSS/JS    │                   │     Java 21+          │                │  LLaMA 3.1   │
-│  Dark Theme     │                   │  • PDF Parser         │                │   8B Instruct│
-│  Glassmorphism  │                   │  • LLM Service        │                └──────────────┘
-│  Particle FX    │                   │  • MCQ Service        │
-└─────────────────┘                   └──────────────────────┘
-```
-
-### 🔄 3-Stage LLM Pipeline
-
-| Stage | Purpose | Input | Output |
-|-------|---------|-------|--------|
-| **Stage 1** | Resume → Structured JSON | PDF text + role requirements | Skills, Experience, Strengths, Gaps |
-| **Stage 2** | Pass/Fail Verdict | Structured analysis + requirements | Verdict, Confidence, Key findings |
-| **Stage 3** | Final Assessment | MCQ scores + resume analysis | Readiness %, Observations, Suggestions |
-
-### 🎭 Supported Roles
-
-| Role | Description |
-|------|-------------|
-| 💻 Software Development Engineer (SDE) | Full-stack problem solver |
-| 🎨 Frontend Developer (FDE) | UI/UX implementation specialist |
-| 🧪 Test/QA Engineer | Quality assurance expert |
-| 📊 Data Scientist | Data analysis & ML practitioner |
-| ⚙️ DevOps Engineer | CI/CD & infrastructure specialist |
-| 🧠 ML Engineer | Machine learning systems builder |
-| 🔧 Backend Developer | Server-side architecture expert |
-| 📱 Mobile Developer | iOS/Android app developer |
-| ☁️ Cloud Architect | Cloud infrastructure designer |
-| 🔒 Cybersecurity Analyst | Security specialist |
+**Target Users:**
+- Job seekers at all career stages
 
 ---
 
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| **Backend** | Java 21+, Spring Boot 3.4, Apache PDFBox |
-| **Frontend** | HTML5, CSS3 (Glassmorphism), Vanilla JS |
-| **AI/LLM** | Meta LLaMA 3.1 8B Instruct via HuggingFace |
-| **HTTP Client** | Spring WebFlux WebClient |
-
----
-
-## 📦 Getting Started
+## 🚀 Setup Instructions
 
 ### Prerequisites
+- Java 11+
+- Python 3.7+
+- Hugging Face API token (free from https://huggingface.co/settings/tokens)
 
-- **Java 21+** (JDK installed and on PATH)
-- **A modern browser** (Chrome, Firefox, Edge)
-- **HuggingFace API Token** (configured in `backend/src/main/resources/application.properties`)
+### Quick Start
 
-### 1. Clone & Navigate
-
-```bash
-git clone <your-repo-url>
-cd shortList
+**1. Set your API token:**
+```powershell
+$env:HF_API_TOKEN = "hf_YourHuggingFaceToken"
 ```
 
-### 2. Start the Backend
-
-```bash
-cd backend
-./mvnw spring-boot:run        # Linux/Mac
-mvnw.cmd spring-boot:run      # Windows
+**2. Start the application:**
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+& "c:\Users\baddipudi.sowmya\Desktop\Project Resurrection\lIy\RUN_APPLICATION.ps1"
 ```
 
-The backend starts on **http://localhost:8080**
-
-### 3. Open the Frontend
-
-Open `frontend/index.html` in your browser, or serve it:
-
-```bash
-cd frontend
-# If you have Python:
-python -m http.server 3000
-# Or use any static file server
+**3. Open in browser:**
+```
+http://localhost:8080
 ```
 
-The frontend runs on **http://localhost:3000**
-
-### 4. Use the App
-
-1. 📄 Upload your resume (PDF)
-2. ✅ Select target roles
-3. 🎬 Watch the AI analysis with suspense effects
-4. 📝 Take the domain MCQ quiz
-5. 📊 Get your readiness report!
+Frontend runs on port 8080, backend on port 8082.
 
 ---
 
-## 📁 Project Structure
+## ✨ Features
+
+### Resume Upload & Analysis
+Upload your resume (PDF or text) and get instant AI-powered analysis.
+
+### Experience Level Selection
+Choose your level (Fresher to Lead/Principal) for fair, experience-appropriate evaluation.
+
+### 10 Tech Roles
+Software Development Engineer, Frontend Developer, Backend Developer, Data Scientist, DevOps Engineer, ML Engineer, Mobile Developer, Cloud Architect, Cybersecurity Analyst, Test/QA Engineer.
+
+### Smart Verdict System
+- **Score ≥ 70%**: Interview preparation with top 6 focus areas and 40+ practice questions.
+- **Score < 70%**: Growth roadmap with recommended skills, 4-week learning plan, and course suggestions.
+
+### Personalized Learning Roadmap
+4-week structured plan covering core concepts, intermediate skills, practical projects, and interview prep.
+
+### Interview Preparation
+40+ role-specific interview questions organized by category and difficulty.
+
+---
+
+## 🏛️ Architecture & Workflow
+
+**How It Works:**
+
+1. **Upload Resume** - Drag and drop your resume file
+2. **Select Level** - Choose your experience level (Fresher to Lead/Principal)
+3. **Choose Roles** - Pick the roles you're interested in
+4. **AI Analysis** - Backend analyzes your resume against role requirements
+5. **Get Verdict** - View your match score and personalized feedback
+   - Score ≥ 70%: Interview prep with practice questions
+   - Score < 70%: Growth roadmap with learning plan
+6. **Learn & Improve** - Use the roadmap and resources to build skills
+
+**System Diagram:**
 
 ```
-shortList/
-├── backend/
-│   ├── pom.xml
-│   ├── mvnw / mvnw.cmd
-│   ├── src/main/java/com/liy/
-│   │   ├── LiyApplication.java
-│   │   ├── config/
-│   │   │   ├── CorsConfig.java
-│   │   │   └── LlmConfig.java
-│   │   ├── controller/
-│   │   │   └── ResumeController.java
-│   │   ├── model/
-│   │   │   ├── ResumeAnalysis.java
-│   │   │   ├── Verdict.java
-│   │   │   ├── Assessment.java
-│   │   │   └── McqQuestion.java
-│   │   └── service/
-│   │       ├── PdfParserService.java
-│   │       ├── LlmService.java
-│   │       └── McqService.java
-│   └── src/main/resources/
-│       ├── application.properties
-│       ├── roles/          # Role qualification definitions
-│       └── mcqs/           # MCQ question banks
-├── frontend/
-│   ├── index.html
-│   ├── css/style.css
-│   ├── js/
-│   │   ├── app.js
-│   │   └── effects.js
-├── README.md
-└── .gitignore
+┌─────────────────────────────────────────────────────────┐
+│                   YOU (Job Seeker)                      │
+│                                                         │
+│  Upload Resume → Select Level → Choose Roles            │
+└────────────────────┬────────────────────────────────────┘
+                     │
+                     ▼
+        ┌────────────────────────┐
+        │   LIY Frontend (Web)    │
+        │                        │
+        │  • Upload interface    │
+        │  • Display results     │
+        │  • Learning roadmap    │
+        └────────────┬───────────┘
+                     │
+                     ▼ API Call
+        ┌────────────────────────┐
+        │   LIY Backend (AI)      │
+        │                        │
+        │  • Analyze resume      │
+        │  • Calculate score     │
+        │  • Generate feedback   │
+        └────────────┬───────────┘
+                     │
+                     ▼ AI Request
+        ┌────────────────────────┐
+        │  Hugging Face LLM      │
+        │                        │
+        │  • Claude / Llama      │
+        │  • Evaluates resume    │
+        │  • Returns analysis    │
+        └────────────┬───────────┘
+                     │
+                     ▼ Response
+        ┌────────────────────────┐
+        │   Your Results          │
+        │                        │
+        │  • Match score         │
+        │  • Focus areas         │
+        │  • Learning roadmap    │
+        │  • Interview questions │
+        └────────────────────────┘
 ```
 
 ---
 
-## 🤝 Contributing
+## 🤖 AI Capabilities
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### LLM as Judge
+The AI analyzes your resume in two steps:
+1. **Resume Analysis** - Extracts skills, experience, and strengths from your resume
+2. **Verdict Generation** - Evaluates how well you match each role and generates fair feedback
+
+### Experience-Aware Evaluation
+Your experience level matters. A fresher isn't penalized for lacking senior skills. Each level has appropriate expectations for fair assessment.
+
+### Fair & Encouraging Feedback
+All feedback is positive and growth-focused. We highlight your strengths and frame gaps as learning opportunities, never discouraging language.
+
+### PII Validation & Privacy
+Your personal information is protected:
+- **Automatic Detection** - System detects sensitive data (emails, phone numbers, addresses) in resumes
+- **Secure Handling** - Personal information is only used for analysis, never stored or shared
+- **Privacy First** - Resume content is processed securely and not retained after analysis
+- **Compliance** - Built with privacy best practices in mind
 
 ---
 
-## 📄 License
+## 🔧 Challenges Faced
 
-This project is open-source and available under the [MIT License](LICENSE).
+- **Backend Startup Time** - First run takes 30-60 seconds due to dependency downloads
+- **LLM API Rate Limiting** - Hugging Face API has request limits for concurrent users
+- **Resume Text Extraction** - PDF parsing accuracy varies depending on format
+- **Mobile Responsiveness** - Complex verdict cards optimized for small screens with multi-breakpoint CSS
+- **Dark Theme Accessibility** - High contrast design ensures WCAG compliance
 
 ---
 
-<p align="center">Made with ❤️ by the LIY Team</p>
+## 🔮 Future Improvements
+
+- **PII Validation & Privacy** - Secure data handling
+- **Interview Practice Mode** - Live simulations with feedback
+- **Progress Tracking** - Monitor learning journey
+- **Job Market Integration** - Real-time in-demand skills
+- **Multi-Language Support** - Global accessibility
+- **Local AI Models** - Faster, private analysis
+- **Admin Dashboard** - For organizations
+- **Explainability** - Understand your scores
+- **Accessibility** - WCAG compliance
+
