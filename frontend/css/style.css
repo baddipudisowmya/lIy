@@ -387,6 +387,99 @@ body::before {
     font-size: 1.2rem;
 }
 
+/* Role Button (Dynamic) */
+.role-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: var(--font-body);
+    transition: all var(--transition-base);
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.role-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: -1;
+}
+
+/* Role Button Hover State */
+.role-btn:hover {
+    border-color: var(--accent-purple);
+    background: rgba(168, 85, 247, 0.08);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Role Button Active/Selected State */
+.role-btn.active {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(99, 102, 241, 0.3));
+    border-color: var(--accent-purple);
+    border-width: 2px;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4), inset 0 0 20px rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+    font-weight: 600;
+    transform: scale(1.02);
+}
+
+.role-btn.active::before {
+    opacity: 0.15;
+}
+
+.role-btn.active::after {
+    content: '✓';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
+    animation: checkmarkPop 0.4s var(--transition-spring);
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Role Button Active Hover */
+.role-btn.active:hover {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6), inset 0 0 20px rgba(168, 85, 247, 0.15);
+    transform: scale(1.05);
+}
+
 /* Primary Button */
 .btn-primary {
     display: flex;
