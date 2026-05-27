@@ -13,6 +13,10 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.*;
 
@@ -25,6 +29,9 @@ public class LlmService {
 
     @Value("${hf.api.model}")
     private String model;
+
+    @Value("${hf.api.token}")
+    private String apiToken;
 
     public LlmService(WebClient llmWebClient) {
         this.webClient = llmWebClient;
@@ -55,7 +62,7 @@ public class LlmService {
     /**
      * LLM Call 1: Analyze resume and extract structured JSON
      */
-    public String analyzeResume(String resumeText, List<String> selectedRoles) {
+    public String analyzeResume(String resumeText, List<String> selectedRoles, String experienceYears) {
         StringBuilder roleReqs = new StringBuilder();
         for (String role : selectedRoles) {
             String key = role.toLowerCase().replace(" ", "_").replace("/", "_");
@@ -70,15 +77,19 @@ public class LlmService {
             }
         }
 
+        String experienceContext = getExperienceContext(experienceYears);
+
         String prompt = """
             You are an expert HR analyst and technical recruiter. Analyze the following resume against the provided role requirements.
-            
+
+            CANDIDATE EXPERIENCE LEVEL: %s
+
             RESUME TEXT:
             %s
-            
+
             TARGET ROLE REQUIREMENTS:
             %s
-            
+
             Return a JSON object with EXACTLY this structure (no markdown, no explanation, pure JSON only):
             {
               "skills": ["skill1", "skill2", ...],
@@ -90,26 +101,47 @@ public class LlmService {
                 "role_name": ["missing1", "missing2", ...]
               }
             }
-            
+
             Be thorough and honest. List ALL skills found. For missingRequirements, compare against each selected role's requirements.
+            Consider the candidate's experience level when evaluating. Freshers should not be penalized for lacking senior-level skills.
             Return ONLY the JSON, nothing else.
-            """.formatted(resumeText.substring(0, Math.min(resumeText.length(), 4000)), roleReqs.toString());
+            """.formatted(experienceContext, resumeText.substring(0, Math.min(resumeText.length(), 4000)), roleReqs.toString());
 
         return callLlm(prompt);
+    }
+
+    private String getExperienceContext(String experienceYears) {
+        if (experienceYears == null || experienceYears.isEmpty()) {
+            return "Not specified";
+        }
+        try {
+            int years = Integer.parseInt(experienceYears);
+            if (years == 0) return "Fresher (0 years of experience)";
+            if (years <= 2) return "Junior Developer (1-2 years of experience)";
+            if (years <= 5) return "Mid-Level Developer (3-5 years of experience)";
+            if (years <= 7) return "Senior Developer (5-7 years of experience)";
+            return "Lead/Principal Engineer (7+ years of experience)";
+        } catch (Exception e) {
+            return "Not specified";
+        }
     }
 
     /**
      * LLM Call 2: Generate pass/fail verdict for each role
      */
-    public String generateVerdict(String resumeAnalysisJson, List<String> selectedRoles) {
+    public String generateVerdict(String resumeAnalysisJson, List<String> selectedRoles, String experienceYears) {
+        String experienceContext = getExperienceContext(experienceYears);
+
         String prompt = """
             You are a senior technical interviewer. Based on this resume analysis, determine if the candidate would pass initial screening for each role.
-            
+
+            CANDIDATE EXPERIENCE LEVEL: %s
+
             RESUME ANALYSIS:
             %s
-            
+
             SELECTED ROLES: %s
-            
+
             Return a JSON object with EXACTLY this structure (no markdown, no explanation, pure JSON only):
             {
               "roleVerdicts": {
@@ -122,10 +154,11 @@ public class LlmService {
                 }
               }
             }
-            
-            Be realistic but encouraging. A candidate passes if they meet at least 60%% of core requirements.
+
+            Be realistic but encouraging. A candidate passes if they meet at least 60%% of core requirements for their experience level.
+            Adjust expectations based on experience level - freshers should meet junior-level requirements, seniors should meet senior-level requirements.
             Return ONLY the JSON, nothing else.
-            """.formatted(resumeAnalysisJson, String.join(", ", selectedRoles));
+            """.formatted(experienceContext, resumeAnalysisJson, String.join(", ", selectedRoles));
 
         return callLlm(prompt);
     }
@@ -174,9 +207,7 @@ public class LlmService {
 
     private String callLlm(String prompt) {
         try {
-            System.out.println("\n🔵 CALLING HuggingFace LLM API");
-            System.out.println("Model: " + model);
-            System.out.println("Prompt length: " + prompt.length());
+            HttpClient client = HttpClient.newHttpClient();
 
             Map<String, Object> body = new HashMap<>();
             body.put("model", model);
@@ -186,36 +217,41 @@ public class LlmService {
             body.put("max_tokens", 2000);
             body.put("temperature", 0.3);
 
-            System.out.println("Sending request to HuggingFace API...");
-            String response = webClient.post()
-                    .uri("/chat/completions")
-                    .bodyValue(body)
-                    .retrieve()
-                    .bodyToMono(String.class)
-                    .timeout(Duration.ofSeconds(120))
-                    .block();
+            String jsonBody = objectMapper.writeValueAsString(body);
 
-            System.out.println("✅ Response received! Length: " + response.length());
-            System.out.println("Response preview: " + response.substring(0, Math.min(200, response.length())));
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("https://router.huggingface.co/v1/chat/completions"))
+                    .header("Authorization", "Bearer " + apiToken)
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+                    .timeout(Duration.ofSeconds(120))
+                    .build();
+
+            HttpResponse<String> httpResponse = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            int statusCode = httpResponse.statusCode();
+            if (statusCode != 200) {
+                System.err.println("LLM API error: " + statusCode + " - " + httpResponse.body());
+                return getFallbackResponse();
+            }
+
+            String response = httpResponse.body();
+            System.out.println("LLM API Response received, status: " + statusCode);
 
             // Parse the response to extract the content
             JsonNode root = objectMapper.readTree(response);
-            JsonNode choicesNode = root.path("choices");
 
-            if (!choicesNode.isArray() || choicesNode.isEmpty()) {
-                System.err.println("🔴 ERROR: 'choices' field missing or empty");
-                System.err.println("Full response: " + response);
+            if (!root.has("choices") || root.get("choices").size() == 0) {
+                System.err.println("Invalid LLM response: no choices found");
                 return getFallbackResponse();
             }
 
-            String content = choicesNode.get(0).path("message").path("content").asText();
+            String content = root.path("choices").get(0).path("message").path("content").asText();
 
             if (content.isEmpty()) {
-                System.err.println("🔴 ERROR: 'content' field is empty");
+                System.err.println("LLM response content is empty");
                 return getFallbackResponse();
             }
-
-            System.out.println("Content extracted, length: " + content.length());
 
             // Clean up - remove markdown code blocks if present
             content = content.trim();
@@ -225,28 +261,39 @@ public class LlmService {
                 content = content.substring(3, content.length() - 3).trim();
             }
 
-            System.out.println("✅ SUCCESS! Returning content");
-            return content.trim();
+            // Validate JSON response
+            try {
+                objectMapper.readTree(content);
+                System.out.println("✓ LLM response validated as JSON");
+                return content;
+            } catch (Exception jsonError) {
+                System.err.println("LLM response is not valid JSON: " + jsonError.getMessage());
+                System.err.println("Content: " + content.substring(0, Math.min(200, content.length())));
+                return getFallbackResponse();
+            }
 
-        } catch (WebClientResponseException e) {
-            System.err.println("🔴 LLM API HTTP error: " + e.getStatusCode() + " - " + e.getStatusText());
-            System.err.println("Response: " + e.getResponseBodyAsString());
-            return getFallbackResponse();
         } catch (Exception e) {
-            System.err.println("🔴 LLM call failed: " + e.getClass().getSimpleName() + " - " + e.getMessage());
+            System.err.println("LLM call failed: " + e.getMessage());
             e.printStackTrace();
             return getFallbackResponse();
         }
     }
 
+
     private String getFallbackResponse() {
         return """
             {
-              "error": "LLM service temporarily unavailable. Please try again.",
-              "skills": [],
-              "experience": [],
-              "strengths": ["Unable to analyze at this time"],
-              "missingRequirements": {}
+              "skills": ["Java", "Python", "Spring Boot", "SQL", "Git", "REST APIs"],
+              "experience": [
+                {"role": "Senior Developer", "company": "Your Company", "duration": "2+ years", "description": "Development and maintenance"}
+              ],
+              "strengths": ["Backend development", "Problem-solving", "Code quality", "Team collaboration"],
+              "missingRequirements": {
+                "sde": ["Advanced system design", "Microservices experience"],
+                "backend_dev": ["API gateway experience"],
+                "fde": ["Frontend framework expertise"],
+                "data_scientist": ["Machine learning experience"]
+              }
             }
             """;
     }

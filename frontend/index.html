@@ -50,8 +50,8 @@
                             </svg>
                         </div>
                         <p class="upload-text">Drop your resume here</p>
-                        <p class="upload-subtext">or click to browse • PDF only • Max 10MB</p>
-                        <input type="file" id="file-input" accept=".pdf" hidden>
+                        <p class="upload-subtext">or click to browse • PDF, DOC, DOCX, or TXT • Max 10MB</p>
+                        <input type="file" id="file-input" accept=".pdf,.doc,.docx,.txt" hidden>
                     </div>
                     <div class="file-info" id="file-info" style="display:none;">
                         <div class="file-badge">
@@ -63,6 +63,25 @@
                             <button id="file-remove" class="file-remove-btn">&times;</button>
                         </div>
                     </div>
+                </div>
+
+                <div class="experience-section glass-card">
+                    <h2 class="experience-title">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        Your Experience Level
+                    </h2>
+                    <p class="experience-desc">Select your years of experience in the tech industry</p>
+                    <select id="experience-level" class="experience-select">
+                        <option value="">-- Select Experience Level --</option>
+                        <option value="0">Fresher (0 years)</option>
+                        <option value="1">Junior (1-2 years)</option>
+                        <option value="3">Mid-Level (3-5 years)</option>
+                        <option value="7">Senior (5-7 years)</option>
+                        <option value="10">Lead/Principal (7+ years)</option>
+                    </select>
                 </div>
 
                 <div class="roles-section glass-card">
@@ -215,6 +234,63 @@
 
                 <div class="results-actions">
                     <button id="btn-restart" class="btn-secondary">
+                        <span class="btn-text">Try Another Resume</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SCREEN 6: INTERVIEW PREP ===== -->
+        <section id="screen-interview-prep" class="screen">
+            <div class="screen-content interview-prep-content">
+                <div class="interview-prep-header">
+                    <h2 class="interview-prep-title">Interview Preparation</h2>
+                    <p class="interview-prep-subtitle">Targeted questions for <span id="prep-role-name"></span></p>
+                </div>
+
+                <div class="match-score-card glass-card">
+                    <div class="match-score-content">
+                        <div class="match-score-left">
+                            <h3>You're a Strong Match!</h3>
+                            <p class="match-message">You are well-positioned for this role and ready to begin interview preparation.</p>
+                        </div>
+                        <div class="match-score-right">
+                            <div class="score-badge">
+                                <span class="score-number" id="match-score-number">85</span>
+                                <span class="score-label">Match %</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prep-sections-container">
+                    <div class="prep-section glass-card">
+                        <h3 class="prep-section-title">✓ What You're Doing Well</h3>
+                        <ul class="prep-list doing-well-list" id="doing-well-list">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+
+                    <div class="prep-section glass-card">
+                        <h3 class="prep-section-title">🎯 Focus Areas Before Interview</h3>
+                        <ul class="prep-list focus-areas-list" id="focus-areas-list">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="interview-questions-container">
+                    <h3 class="questions-title">Interview Questions by Category</h3>
+                    <div class="questions-categories" id="questions-categories">
+                        <!-- Questions populated dynamically -->
+                    </div>
+                </div>
+
+                <div class="prep-actions">
+                    <button id="btn-back-to-results" class="btn-secondary">
+                        <span class="btn-text">← Back</span>
+                    </button>
+                    <button id="btn-restart-from-prep" class="btn-secondary">
                         <span class="btn-text">Try Another Resume</span>
                     </button>
                 </div>
